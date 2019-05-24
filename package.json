@@ -1,0 +1,28 @@
+{
+  "name": "todoappbyme",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+"test": "tape tests/tests.js | tap-spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ahlamkadour1992/ToDoAppByMe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ahlamkadour1992/ToDoAppByMe/issues"
+  },
+  "homepage": "https://github.com/Ahlamkadour1992/ToDoAppByMe#readme",
+  "dependencies": {
+    "tap-spec": "^5.0.0"
+  },
+  "devDependencies": {
+    "tape": "^4.10.1"
+  }
+}
