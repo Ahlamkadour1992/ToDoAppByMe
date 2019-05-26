@@ -20,6 +20,7 @@ var todoFunctions = {
   cloneArrayOfObjects: function(todos) {
     return todos.map(function(todo){
       return JSON.parse(JSON.stringify(todo));
+      console.log(todo);
     });
   },
 
@@ -28,24 +29,47 @@ var todoFunctions = {
     // returns a new array, it should contain todos with the newTodo added to the end.
     // add an id to the newTodo. You can use the generateId function to create an id.
     // hint: array.concat
+var todosArray = todoFunctions.cloneArrayOfObjects(todos);
+var newTodoObject = Object.assign(newTodo);
+// JSON.parse(JSON.stringify(todosArray));
+// newTodoObject.id = todoFunctions.generateId(newTodo);
+// newTodoObject.description = todoFunctions.addTodo(newTodo);
+return todosArray.concat(newTodoObject);
+
   },
   deleteTodo: function(todos, idToDelete) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // return a new array, this should not contain any todo with an id of idToDelete
     // hint: array.filter
+    var todosArray = todoFunctions.cloneArrayOfObjects(todos);
+return todosArray.filter(el => el.id !== idToDelete);
+
   },
   markTodo: function(todos, idToMark) {
     // should leave the input argument todos unchanged (you can use cloneArrayOfObjects)
     // in the new todo array, all elements will remain unchanged except the one with id: idToMark
     // this element will have its done value toggled
     // hint: array.map
+    var todosArray = todoFunctions.cloneArrayOfObjects(todos);
+return todosArray.map(el => {
+  if(el.id === idToMark){
+  el.done = true;
+  return el;
+  } else {
+    return el;
+  }
+})
+
   },
   sortTodos: function(todos, sortFunction) {
     // stretch goal! Do this last
     // should leave the input arguement todos unchanged (you can use cloneArrayOfObjects)
     // sortFunction will have same signature as the sort function in array.sort
     // hint: array.slice, array.sort
-  },
+//     var todosArray = todoFunctions.cloneArrayOfObjects(todos);
+// var sliceArray = todosArray.slice(0);
+// return sliceArray.forEach(el => el.description.sortFunction());  
+},
 };
 
 
